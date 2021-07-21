@@ -8,7 +8,7 @@
 class SerialPlugin : public ExtensionSystem::IPlugin
 {
     Q_OBJECT
-    Q_PLUGIN_METADATA(IID "monkeyqdk.qtc.plugin" FILE "serialplugin.json")
+    Q_PLUGIN_METADATA(IID "monkeyqdk.example.plugin" FILE "serialplugin.json")
 
 public:
     SerialPlugin();

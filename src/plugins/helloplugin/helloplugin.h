@@ -8,7 +8,7 @@
 class HelloPlugin : public ExtensionSystem::IPlugin
 {
     Q_OBJECT
-    Q_PLUGIN_METADATA(IID "monkeyqdk.qtc.plugin" FILE "helloplugin.json")
+    Q_PLUGIN_METADATA(IID "monkeyqdk.example.plugin" FILE "helloplugin.json")
 public:
     HelloPlugin();
     ~HelloPlugin();

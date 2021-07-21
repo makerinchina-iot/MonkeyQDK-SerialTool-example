@@ -15,9 +15,9 @@ int main(int argc, char *argv[])
 
 //    QDir::setCurrent(a.applicationDirPath());
 
-    a.setApplicationName("appName");
-    a.setApplicationDisplayName("appDisname");
-    a.setDesktopFileName("deskName");
+    a.setApplicationName("MonkeySerialExample");
+    a.setApplicationDisplayName("MonkeySerialExample");
+    a.setDesktopFileName("MonkeySerialExample");
     a.setApplicationVersion("0.01");
     a.setOrganizationDomain("com.makerinchina.cn");
     a.setOrganizationName("makerinchina");
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     PluginManager pluginManger;
 
     //plugin IID, only Plugins with this IID are loaded
-    PluginManager::setPluginIID(QLatin1String("monkeyqdk.qtc.plugin"));
+    PluginManager::setPluginIID(QLatin1String("monkeyqdk.example.plugin"));
 
     //plugin path
     QStringList pluginPath;

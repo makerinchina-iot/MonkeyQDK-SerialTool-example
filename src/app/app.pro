@@ -4,7 +4,7 @@ QT += core gui widgets
 
 TEMPLATE = app
 
-TARGET = MonkayQDK
+TARGET = MonkeySerialExample
 
 LIBS += -L$$APP_LIBS_PATH
 

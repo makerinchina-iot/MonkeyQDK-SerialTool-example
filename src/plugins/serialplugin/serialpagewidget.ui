@@ -6,157 +6,206 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>791</width>
-    <height>529</height>
+    <width>628</width>
+    <height>511</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_5" stretch="9,1">
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="2,8">
-     <item>
-      <widget class="QGroupBox" name="groupBox_2">
-       <property name="title">
-        <string/>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_3">
+  <layout class="QGridLayout" name="gridLayout" rowstretch="7,3" columnstretch="2,8">
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Settings</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2" stretch="4,2,1,1">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout">
+         <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout">
-            <item>
-             <widget class="QLabel" name="labelSerial">
-              <property name="text">
-               <string>Serial</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="SerialComboBox" name="serialportComboBox"/>
-            </item>
-           </layout>
+           <widget class="QLabel" name="labelSerial">
+            <property name="text">
+             <string>Serial:</string>
+            </property>
+           </widget>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_2">
-            <item>
-             <widget class="QLabel" name="labelSerial_2">
-              <property name="text">
-               <string>Baudrate</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="SerialComboBox" name="serialportComboBox_2"/>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_3">
-            <item>
-             <widget class="QLabel" name="labelSerial_3">
-              <property name="text">
-               <string>Databit</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="SerialComboBox" name="serialportComboBox_3"/>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_4">
-            <item>
-             <widget class="QLabel" name="labelSerial_4">
-              <property name="text">
-               <string>Paraity</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="SerialComboBox" name="serialportComboBox_4"/>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_5">
-            <item>
-             <widget class="QLabel" name="labelSerial_5">
-              <property name="text">
-               <string>StopBit</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="SerialComboBox" name="serialportComboBox_5"/>
-            </item>
-           </layout>
+           <widget class="SerialComboBox" name="serialportComboBox"/>
           </item>
          </layout>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
-           <widget class="QLabel" name="label_3">
+           <widget class="QLabel" name="labelSerial_2">
             <property name="text">
-             <string>state</string>
+             <string>Baudrate:</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton">
+           <widget class="SerialComboBox" name="baudComboBox"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLabel" name="labelSerial_3">
             <property name="text">
-             <string>Open</string>
+             <string>Databit:</string>
             </property>
            </widget>
+          </item>
+          <item>
+           <widget class="SerialComboBox" name="databitComboBox"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLabel" name="labelSerial_4">
+            <property name="text">
+             <string>Paraity:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="SerialComboBox" name="paraityComboBox"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QLabel" name="labelSerial_5">
+            <property name="text">
+             <string>StopBit:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="SerialComboBox" name="stopbitComboBox"/>
           </item>
          </layout>
         </item>
        </layout>
-      </widget>
-     </item>
-     <item>
-      <widget class="QGroupBox" name="groupBox">
-       <property name="title">
-        <string>Recv:</string>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_8">
         <item>
-         <widget class="QPlainTextEdit" name="plainTextEdit"/>
+         <widget class="QLabel" name="labelOpenState">
+          <property name="text">
+           <string>state</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_6">
-          <item>
-           <widget class="QLabel" name="label_2">
-            <property name="text">
-             <string>Count:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="label">
-            <property name="text">
-             <string>1</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButton_2">
-            <property name="text">
-             <string>Clear</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
+         <widget class="QPushButton" name="btnOpen">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Open</string>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
+         </widget>
         </item>
        </layout>
-      </widget>
-     </item>
-    </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>send:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelSendcnt">
+          <property name="text">
+           <string>1</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnClearSend">
+          <property name="text">
+           <string>Clear Send</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_7">
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>recv:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelRecvCnt">
+          <property name="text">
+           <string>1</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnClearRecv">
+          <property name="text">
+           <string>Clear Recv</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
    </item>
-   <item>
+   <item row="0" column="1">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Recv:</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QPlainTextEdit" name="editRecv"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QFrame" name="frame">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="QPushButton" name="btnSend">
+        <property name="text">
+         <string>Send</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="1">
     <widget class="QGroupBox" name="groupBox_3">
      <property name="title">
       <string>send:</string>
@@ -165,14 +214,7 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_9">
         <item>
-         <widget class="InputLineEdit" name="inputLineEdit"/>
-        </item>
-        <item>
-         <widget class="QPushButton" name="btnSend">
-          <property name="text">
-           <string>Send</string>
-          </property>
-         </widget>
+         <widget class="QPlainTextEdit" name="editSend"/>
         </item>
        </layout>
       </item>
@@ -182,11 +224,6 @@
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>InputLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>inputlineedit.h</header>
-  </customwidget>
   <customwidget>
    <class>SerialComboBox</class>
    <extends>QComboBox</extends>

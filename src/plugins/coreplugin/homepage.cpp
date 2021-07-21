@@ -3,6 +3,7 @@
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QIcon>
+#include <QCoreApplication>
 
 #include <fancytabwidget/fancytabwidget.h>
 #include <fancytabwidget/fancybutton.h>

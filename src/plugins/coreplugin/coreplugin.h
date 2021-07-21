@@ -14,7 +14,7 @@
 class CorePlugin : public ExtensionSystem::IPlugin
 {
     Q_OBJECT
-    Q_PLUGIN_METADATA(IID "monkeyqdk.qtc.plugin" FILE "coreplugin.json")
+    Q_PLUGIN_METADATA(IID "monkeyqdk.example.plugin" FILE "coreplugin.json")
 public:
     explicit CorePlugin(){}
 

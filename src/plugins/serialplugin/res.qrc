@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/icon">
         <file>image/serialmonitor.png</file>
+        <file>image/state_close.png</file>
+        <file>image/state_open.png</file>
     </qresource>
 </RCC>

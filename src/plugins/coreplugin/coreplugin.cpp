@@ -29,7 +29,7 @@ bool CorePlugin::initialize(const QStringList &, QString *)
 
     QMainWindow *mwin = new QMainWindow;
 
-    mwin->setWindowTitle("MonkeyQDK 0.01 by MakerInChina");
+//    mwin->setWindowTitle("MonkeyQDK 0.01 by MakerInChina");
 
     QAction *actSetting = new QAction("setting");
     actSetting->setIcon(QIcon(":/icon/image/options.png"));
