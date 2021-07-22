@@ -58,3 +58,8 @@ SystemSettings::SystemSettings()
     setDisplayName("SystemSetting");
     setWidgetCreator([] {return new SystemSettingsWidget;});
 }
+
+void SystemSettings::finish()
+{
+
+}

@@ -4,6 +4,7 @@
 
 #include <QDebug>
 
+
 SerialPageWidget::SerialPageWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::SerialPageWidget)
@@ -48,11 +49,25 @@ SerialPageWidget::SerialPageWidget(QWidget *parent) :
     connect(ui->btnClearSend,&QPushButton::clicked,this,&SerialPageWidget::clearSend);
     connect(ui->btnSend,&QPushButton::clicked,this,&SerialPageWidget::sendInput);
 
+    //init color from saved settings
+    SerialPluginSettings *settings = new SerialPluginSettings;
+
+    Utils::QtcSettings *s = ExtensionSystem::PluginManager::settings();
+    settings->fromSettings(s);
+    applySettings(settings);
+
 }
 
 SerialPageWidget::~SerialPageWidget()
 {
     delete ui;
+}
+
+void SerialPageWidget::applySettings(SerialPluginSettings *settings)
+{
+    QString backColor = settings->m_backColor;
+    QString foreColor = settings->m_foreColor;
+    ui->editRecv->setStyleSheet("QPlainTextEdit{background-color:"+backColor+ "; color:" + foreColor + ";}");
 }
 
 void SerialPageWidget::sendInput()

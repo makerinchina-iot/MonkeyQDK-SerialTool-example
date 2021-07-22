@@ -4,9 +4,13 @@
 
 #include <QDebug>
 
+#include <QSettings>
+
 #include <extensionsystem/pluginmanager.h>
 #include <extensionsystem/pluginspec.h>
 #include <extensionsystem/iplugin.h>
+
+#include <utils/qtcsettings.h>
 
 int main(int argc, char *argv[])
 {
@@ -24,8 +28,13 @@ int main(int argc, char *argv[])
 
     using namespace ExtensionSystem;
 
+    //settings
+    Utils::QtcSettings *setting = new Utils::QtcSettings(QSettings::IniFormat,QSettings::UserScope,"makerinchina","MonkeySerialExample");
+
     //plugin mange
     PluginManager pluginManger;
+
+    PluginManager::setSettings(setting);
 
     //plugin IID, only Plugins with this IID are loaded
     PluginManager::setPluginIID(QLatin1String("monkeyqdk.example.plugin"));

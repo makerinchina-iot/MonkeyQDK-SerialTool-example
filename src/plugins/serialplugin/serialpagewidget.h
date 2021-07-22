@@ -5,7 +5,8 @@
 #include <QSerialPort>
 #include <QSerialPortInfo>
 
-#include <serialcontrol.h>
+#include "serialcontrol.h"
+#include "serialsettings.h"
 
 namespace Ui {
 class SerialPageWidget;
@@ -30,6 +31,10 @@ private:
 
     quint64 m_sendCnt;
     quint64 m_recvCnt;
+
+    //settings
+public:
+    void applySettings(SerialPluginSettings *settings);
 
 private slots:
     void sendInput();

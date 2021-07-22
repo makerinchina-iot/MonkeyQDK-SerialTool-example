@@ -9,7 +9,9 @@ TARGET = MonkeySerialExample
 LIBS += -L$$APP_LIBS_PATH
 
 LIBS += \
+    -lutils \
     -lextensionsystem \
+    -lcoreplugin \
 
 SOURCES += \
     main.cpp

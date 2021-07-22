@@ -1,10 +1,19 @@
 #include "serialpage.h"
 
-#include "serialpagewidget.h"
+#include <QDebug>
 
 SerialPage::SerialPage()
 {
     setButtonName("Serial");
     setButtonIcon(QIcon(":/icon/image/serialmonitor.png"));
-    setWidget(new SerialPageWidget);
+
+    m_serialPageWidget = new SerialPageWidget;
+    setWidget(m_serialPageWidget);
+}
+
+void SerialPage::updateSetting(SerialPluginSettings *settings)
+{
+    //here apply the settings in setting page
+
+    m_serialPageWidget->applySettings(settings);
 }
