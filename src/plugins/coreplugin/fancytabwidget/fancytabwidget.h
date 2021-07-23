@@ -135,7 +135,6 @@ private:
     QList<FancyTab*> m_tabs;
     QTimer m_triggerTimer;
     QSize tabSizeHint(bool minimum = false) const;
-
 };
 
 class FancyTabWidget : public QWidget
@@ -161,12 +160,15 @@ public:
     void setTabEnabled(int index, bool enable);
     bool isTabEnabled(int index) const;
 
+    bool isSelectionWidgetVisible() const;
+
 signals:
     void currentAboutToShow(int index);
     void currentChanged(int index);
 
 public slots:
     void setCurrentIndex(int index);
+    void setSelectionWidgetVisible(bool visible);
 
 private slots:
     void showWidget(int index);

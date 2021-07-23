@@ -8,6 +8,8 @@ class SystemSettings : public Core::IOptionsPage
 {
 public:
     SystemSettings();
+
+    void finish() override;
 };
 
 #endif // SYSTEMSETTINGS_H

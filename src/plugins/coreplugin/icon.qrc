@@ -4,5 +4,10 @@
         <file>image/home.png</file>
         <file>image/options.png</file>
         <file>image/projects.png</file>
+        <file>image/toggle_left_off.png</file>
+        <file>image/toggle_left_on.png</file>
+        <file>image/github.png</file>
+        <file>image/github.svg</file>
+        <file>image/logo.png</file>
     </qresource>
 </RCC>

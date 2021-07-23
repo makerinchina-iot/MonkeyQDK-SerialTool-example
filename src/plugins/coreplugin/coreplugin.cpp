@@ -7,6 +7,7 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QMenu>
+#include <QStatusBar>
 
 #include <coreplugin/dialogs/ioptionspage.h>
 #include <coreplugin/dialogs/settingsdialog.h>
@@ -44,6 +45,50 @@ bool CorePlugin::initialize(const QStringList &, QString *)
     m_fancyTabWidgt = new FancyTabWidget();
     mwin->setCentralWidget(m_fancyTabWidgt);
     mwin->setMinimumSize(800,600);
+
+    //status bar
+    QWidget *statusBarLeftWidget = new QWidget(mwin);
+    QHBoxLayout *statusBarLeftWidgetLayout = new QHBoxLayout(statusBarLeftWidget);
+    statusBarLeftWidgetLayout->setMargin(0);
+    statusBarLeftWidget->setLayout(statusBarLeftWidgetLayout);
+    QToolButton *btnToggleSelectBar = new QToolButton;
+    btnToggleSelectBar->setToolButtonStyle(Qt::ToolButtonIconOnly);
+    btnToggleSelectBar->setIcon(QIcon(":/icon/image/toggle_left_on.png"));
+    btnToggleSelectBar->setIconSize(QSize(16,16));
+    btnToggleSelectBar->setCheckable(true);
+    btnToggleSelectBar->setChecked(true);
+    btnToggleSelectBar->setStyleSheet("QToolButton\
+    {\
+        border:none;\
+        background:transparent;\
+    }\
+    QToolButton:checked\
+    {\
+        border:none;\
+        background-color:rgb(21,21,21);\
+    }\
+    QToolButton:hover\
+    {\
+      border:1px solid #757575;\
+      background-color:rgb(121,121,121);\
+    }\
+    \
+    QToolButton:pressed\
+    {\
+      border:none;\
+      background-color:rgb(151,151,151);\
+    }\
+    \
+   ");
+    statusBarLeftWidgetLayout->addWidget(btnToggleSelectBar);
+    m_fancyTabWidgt->statusBar()->insertWidget(0,statusBarLeftWidget);
+    m_fancyTabWidgt->statusBar()->setStyleSheet("QStatusBar{color:#606162;background-color:#404142;}");
+    connect(btnToggleSelectBar,&QToolButton::toggled,[=](bool checked){
+//       if(checked)
+       {
+           m_fancyTabWidgt->setSelectionWidgetVisible(checked);
+       }
+    });
 
     FancyButton *btn = new FancyButton(m_fancyTabWidgt);
     btn->setIcon(QIcon(":/icon/image/options.png"));

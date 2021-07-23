@@ -102,6 +102,7 @@ FancyTabBar::~FancyTabBar()
 
 QSize FancyTabBar::tabSizeHint(bool minimum) const
 {
+
     QFont boldFont(font());
     boldFont.setPointSizeF(Utils::StyleHelper::sidebarFontSize());
     boldFont.setBold(true);
@@ -411,14 +412,14 @@ FancyTabWidget::FancyTabWidget(QWidget *parent)
     selectionLayout->addWidget(m_cornerWidgetContainer, 0);
 
     m_modesStack = new QStackedLayout;
-    //m_statusBar = new QStatusBar;
-    //m_statusBar->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Fixed);
+    m_statusBar = new QStatusBar;
+    m_statusBar->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Fixed);
 
     QVBoxLayout *vlayout = new QVBoxLayout;
     vlayout->setMargin(0);
     vlayout->setSpacing(0);
     vlayout->addLayout(m_modesStack);
-    //vlayout->addWidget(m_statusBar);
+    vlayout->addWidget(m_statusBar);
 
     QHBoxLayout *mainLayout = new QHBoxLayout;
     mainLayout->setMargin(0);
@@ -521,3 +522,19 @@ bool FancyTabWidget::isTabEnabled(int index) const
 {
     return m_tabBar->isTabEnabled(index);
 }
+
+void FancyTabWidget::setSelectionWidgetVisible(bool visible)
+{
+    m_selectionWidget->setVisible(visible);
+
+    if(visible)
+        m_selectionWidget->setMaximumWidth(100);
+    else
+        m_selectionWidget->setMaximumWidth(0);
+}
+
+bool FancyTabWidget::isSelectionWidgetVisible() const
+{
+    return m_selectionWidget->isVisible();
+}
+
